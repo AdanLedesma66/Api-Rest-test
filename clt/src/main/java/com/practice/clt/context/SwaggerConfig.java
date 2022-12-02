@@ -6,6 +6,7 @@ package com.practice.clt.context;
 
 import io.swagger.annotations.Contact;
 import java.util.Collections;
+import lombok.Data;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -19,6 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  *
  * @author aledesma
  */
+@Data
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -31,14 +33,13 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(apiInfo());
     }
-
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "Todo API",
-                "La API REST de Adan App.",
+                "La API REST de ToDo App.",
                 "v1",
                 "Terms of service",
-                new Contact("SACAViX Tech", "www.example.com", "myeaddress@company.com") {},
+                new springfox.documentation.service.Contact("SACAViX Tech", "www.example.com", "myeaddress@company.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 }

@@ -4,10 +4,13 @@
  */
 package com.practice.clt.controller;
 
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  *
  * @author aledesma
  */
+@RestController      
 public class TaskController {
     
 }

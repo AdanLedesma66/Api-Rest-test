@@ -9,5 +9,5 @@ package com.practice.clt.persistence.entity;
  * @author aledesma
  */
 public enum TaskStatus {
-    
+    ON_TIME, LATE
 }

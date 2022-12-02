@@ -12,6 +12,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author aledesma
  */
 public interface TaskRepository extends JpaRepository<Task, Long>{
-    
-    
+   
 }
