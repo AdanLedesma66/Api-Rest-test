@@ -4,6 +4,7 @@
  */
 package com.practice.clt.service;
 
+import com.practice.clt.mapper.TaskInDTOToTask;
 import com.practice.clt.persistence.entity.Task;
 import com.practice.clt.persistence.entity.repository.TaskRepository;
 import com.practice.clt.service.dto.TaskInDTO;
@@ -16,15 +17,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class TaskService {
 
-    public TaskService(com.practice.clt.persistence.entity.repository.TaskRepository repository) {
+    public TaskService(com.practice.clt.persistence.entity.repository.TaskRepository repository, com.practice.clt.mapper.TaskInDTOToTask mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
     private final TaskRepository repository;
+    private final TaskInDTOToTask mapper;
     
   
-    private Task createtask (TaskInDTO taskInDTO){
-        
-        this.repository.save(this)
+    public Task createTask (TaskInDTO taskInDTO){
+        Task task = mapper.map(taskInDTO);
+        return this.repository.save(task);
+
         
     }
     

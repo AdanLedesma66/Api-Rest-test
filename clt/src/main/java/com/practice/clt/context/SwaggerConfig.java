@@ -4,7 +4,6 @@
  */
 package com.practice.clt.context;
 
-import io.swagger.annotations.Contact;
 import java.util.Collections;
 import lombok.Data;
 import org.springframework.context.annotation.Bean;

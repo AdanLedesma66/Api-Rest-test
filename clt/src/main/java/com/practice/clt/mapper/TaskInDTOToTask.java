@@ -5,6 +5,7 @@
 package com.practice.clt.mapper;
 
 import com.practice.clt.persistence.entity.Task;
+import com.practice.clt.persistence.entity.TaskStatus;
 import com.practice.clt.service.dto.TaskInDTO;
 import java.time.LocalDateTime;
 import org.springframework.stereotype.Component;
@@ -21,9 +22,9 @@ public class TaskInDTOToTask implements IMapper<TaskInDTO, Task>{
     public Task map(TaskInDTO in) {
         Task task = new Task();
         task.setTitle(in.getTitle());
-        task.setDescription(in.getDescription());
+        task.setDescripcion(in.getDescripcion());
         task.setEta(in.getEta());
-        task.setCreatedDate(LocalDateTime.now());
+        task.setEta(LocalDateTime.now());
         task.setFinished(false);
         task.setTaskStatus(TaskStatus.ON_TIME);
         return task;
